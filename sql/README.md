@@ -1,0 +1,2 @@
+# Existing Supabase database
+This package is designed to connect to your **existing** Quiz Arena Supabase project. Do not recreate your tables or run destructive SQL. It expects `profiles`, `quizzes`, `questions`, `answer_options`, `game_sessions`, `session_players` and existing RPCs `join_game_room`, `control_game_session`. Existing RLS applies. This package does **not** change role tables or permissions. Before deployment, audit registration trigger and approved host access rules.
