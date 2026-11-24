@@ -2,12 +2,21 @@
 
 **Important:** This is a fresh, runnable **starter scaffold**, not a complete copy of your previous project. The original project ZIP was not provided. Features not included are listed below. Teacher role is removed from the new registration interface. Regular accounts can sign up, create quizzes, and (when permitted by existing RLS) host rooms. Moderators remain assigned through existing database invitations; moderator UI is not yet integrated.
 
-## Setup on Windows 11
-1. Install Node.js 20+ and VS Code.
-2. Open `web-app` in VS Code. Copy `.env.example` to `.env.local` and enter your existing Supabase Project URL and publishable/anon key. Never use the service role key in client apps.
-3. In terminal run `npm install` then `npm run dev`. Open http://localhost:3000.
-4. For Android, open `mobile-app`. Copy `.env.example` to `.env` and enter the same public Supabase values. Run `npm install` then `npx expo start`. Open Expo Go on Android (compatible SDK required).
-5. Confirm email in Supabase Authentication if enabled. Use two test accounts for multiplayer.
+## Run the web UI preview on Windows
+
+Install Node.js 22 or later. From the project root, run:
+
+```powershell
+cd web-app
+npm.cmd ci
+npm.cmd run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) and choose **Open UI preview**. The web app starts with sample quizzes and a room code. Preview edits are stored in the current browser. Real account and multiplayer integration can be enabled later using the [web setup guide](web-app/WEB_SETUP.md).
+
+## Run the Android starter
+
+In `mobile-app`, create `.env` with `EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_ANON_KEY` for your team's project. Run `npm install` and `npx expo start`, then open Expo Go with a compatible SDK.
 
 ## Included
 - Web landing page, registration/sign-in with no Teacher role, dashboard, quiz creation, manual multiple-choice question editor, room creation, room joining through your existing RPC, room status controls and realtime subscriptions.

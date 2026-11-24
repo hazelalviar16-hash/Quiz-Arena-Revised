@@ -2,14 +2,30 @@
 
 Based on the original `Quiz-Arena-Revised-Starter.zip`, preserving its Next.js 15 project, existing Supabase client and database calls.
 
-## Run on Windows 11
+## UI preview on Windows
 
-1. Open the `web-app` folder in VS Code.
-2. Copy `.env.example` to `.env.local` and add the SAME Supabase URL and anon/publishable key used by the mobile app, using the `NEXT_PUBLIC_...` variable names shown in the example.
-3. Open the terminal in `web-app`.
-4. Run `npm install`.
-5. Run `npm run dev`.
-6. Visit http://localhost:3000.
+From a PowerShell terminal in `web-app`, run:
+
+```powershell
+npm.cmd ci
+npm.cmd run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) and choose **Open UI preview** to go straight to the dashboard. The sign-in and registration forms accept sample details in this mode. Under **My Quizzes**, open a sample or create a local quiz. Under **Multiplayer**, use `654321` to open the sample lobby, or host a preview room from a quiz.
+
+UI preview is the default. Its quiz and room changes are stored in the current browser and stay there when you reload.
+
+## Connect Supabase later
+
+Set these values in `web-app/.env.local` and restart the development server:
+
+```dotenv
+NEXT_PUBLIC_QUIZ_ARENA_MODE=supabase
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-publishable-key
+```
+
+Use your team's project with the tables, functions, and policies described in the [database notes](../sql/README.md). Remove `NEXT_PUBLIC_QUIZ_ARENA_MODE` to return to the web UI preview.
 
 ## Included
 - Responsive Playful Purple & Cream design, matching mobile
